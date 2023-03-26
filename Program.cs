@@ -6,15 +6,18 @@
         {
             //Calculating the area of shapes
 
-            IShape[] IShapes = {
+            IShape[] shapes = {
                 new Triangle(10, 10),
                 new Square(0.60),
                 new Rectangle(10, 20),
                 new Circle(4)
             };
 
-            foreach (IShape IShape in IShapes)
-                Console.WriteLine(IShape.Area);
+            foreach (IShape shape in shapes)
+            {
+                Console.WriteLine(shape.Area());
+                
+            }
         }
     }
 }
@@ -25,7 +28,6 @@ interface IShape
 {
     double Area();
 }
-
 
 class Triangle : IShape
 {
@@ -53,6 +55,7 @@ class Square : IShape
     {
         return Base * Base;
     }
+
 }
 class Rectangle : IShape
 {
@@ -85,6 +88,4 @@ class Circle : IShape
     }
 
     private double radius { get; set; }
-
-
 }
